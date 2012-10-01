@@ -22,14 +22,7 @@
 					<?php previous_posts_link('Senare nyheter &raquo;') ?>
 				</div>
 			</div>
-            
-		<?php else : ?>
-        
-			<h1 class="post-title">Kunde inte hittas</h2>
-			<div class="entry">
-				<p>Tyvärr, du letar efter något som inte längre finns. Prova att använda menyn eller söka.</p>
-			</div>
-
+			
 		<?php endif; ?>
 	
     </section>
