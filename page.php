@@ -1,18 +1,18 @@
 <?php get_header(); ?>
 	
-    <section id="content">
+	<section id="content">
 		
 		<?php if (have_posts()) : ?>
-			
+		
 			<?php while (have_posts()) : the_post(); ?>
             
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h1 class="post-title"><?php the_title(); ?></h1>
-					<?php the_content('Läs mer &raquo;'); ?>
+					<?php the_content(); ?>
 				</article>
                 
 			<?php endwhile; ?>
-
+			
 		<?php else : ?>
         
 			<h1 class="post-title">Kunde inte hittas</h2>
@@ -22,7 +22,7 @@
 
 		<?php endif; ?>
 	
-    </section>
+	</section>
 		
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

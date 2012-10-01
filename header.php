@@ -16,15 +16,13 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	
-	<script>window.jQuery || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/js/libs/jquery-1.8.1.min.js"><\/script>')</script>
+	<script>window.jQuery || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
     
 </head>
 
 <body <?php body_class(); ?>>
 
-<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
-<div id="page" class="hfeed">
+<section id="page" class="hfeed">
 		
     <header id="header">
 			
@@ -41,4 +39,4 @@
 	
     </header>
 
-	<div id="main">
+	<section id="main">
