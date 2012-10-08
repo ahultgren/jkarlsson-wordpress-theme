@@ -100,6 +100,10 @@ ul {
 	list-style: disc;
 }
 
+li {
+	margin-bottom: 1em;
+}
+
 ol {
 	list-style: decimal;
 }
