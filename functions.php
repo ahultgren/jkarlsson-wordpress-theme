@@ -78,4 +78,8 @@ function skl_enqueue_scripts(){
 	}
 }
 
-?>
+/* ----- Prevent stylesheet from being cached ----- */
+
+function stylesheet_url(){
+	echo get_bloginfo('stylesheet_url') . '?' . filemtime(get_stylesheet_directory() . '/style.css');
+}

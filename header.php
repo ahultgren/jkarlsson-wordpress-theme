@@ -7,7 +7,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
-	<link rel="stylesheet" media="all" href="<?php bloginfo('stylesheet_url'); echo '?'.filemtime( get_stylesheet_directory().'/style.css'); ?>" />
+	<link rel="stylesheet" media="all" href="<?php stylesheet_url(); ?>" />
     <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.ico" />
     
     <?php wp_head(); ?>
