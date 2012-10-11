@@ -78,6 +78,7 @@ function skl_enqueue_scripts(){
 	}
 }
 
+
 /* ----- Prevent stylesheet from being cached ----- */
 
 function stylesheet_url(){

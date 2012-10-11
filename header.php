@@ -21,22 +21,21 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-<section id="page" class="hfeed">
+	<section id="page" class="hfeed">
+			
+	    <header id="header">
+				
+			<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
+			<<?php echo $heading_tag; ?> id="site-title">
+				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			</<?php echo $heading_tag; ?>>
+				
+	        <nav id="top-menu">
+				<?php wp_nav_menu( array('theme_location' => 'main-menu') ); ?>
+			</nav>
+	            
+	       	<?php get_search_form(); ?>
 		
-    <header id="header">
-			
-		<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
-		<<?php echo $heading_tag; ?> id="site-title">
-			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-		</<?php echo $heading_tag; ?>>
-			
-        <nav id="top-menu">
-			<?php wp_nav_menu( array('theme_location' => 'main-menu') ); ?>
-		</nav>
-            
-       	<?php get_search_form(); ?>
+	    </header>
 	
-    </header>
-
-	<section id="main">
+		<section id="main">
