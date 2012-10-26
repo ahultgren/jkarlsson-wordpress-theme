@@ -136,7 +136,7 @@ body,
 input,
 textarea {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font-size: inherit;
 	line-height: 1.5;
 	font-weight: 300;
 }
