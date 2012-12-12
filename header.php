@@ -8,34 +8,27 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 	<link rel="stylesheet" media="all" href="<?php stylesheet_url(); ?>" />
-    <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.ico" />
-    
-    <?php wp_head(); ?>
-    
-    <!--[if lt IE 9]>
+	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.ico" />
+
+	<?php wp_head(); ?>
+
+	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	
 	<script>window.jQuery || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
-    
-</head>
 
+</head>
 <body <?php body_class(); ?>>
-	<section id="page" class="hfeed">
-			
-	    <header id="header">
-				
+	<section id="wrapper">
+		<header id="header">
 			<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 			<<?php echo $heading_tag; ?> id="site-title">
 				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			</<?php echo $heading_tag; ?>>
-				
-	        <nav id="top-menu">
+
+			<nav id="top-menu">
 				<?php wp_nav_menu( array('theme_location' => 'main-menu') ); ?>
 			</nav>
-	            
-	       	<?php get_search_form(); ?>
-		
-	    </header>
-	
+		</header>
 		<section id="main">
