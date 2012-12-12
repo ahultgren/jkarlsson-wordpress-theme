@@ -66,7 +66,7 @@ add_filter( 'excerpt_length', 'new_excerpt_length' );
 
 /* ----- Include jQuery from Google ----- */
 
-add_action( 'wp_enqueue_scripts', 'skl_enqueue_scripts', 10 );
+add_action( 'wp_enqueue_scripts', 'skl_enqueue_scripts', 1 );
 function skl_enqueue_scripts(){
 	if( !is_admin() ){
 		wp_deregister_script('jquery');
