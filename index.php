@@ -1,26 +1,31 @@
 <?php get_header(); ?>
-	<section id="content">
+
 	<?php if (have_posts()) : ?>
+		
 		<?php while (have_posts()) : the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<h2 class="post-title"><?php the_title(); ?></h2>
-				<time datetime="<?php the_time('Y-m-d'); ?>" class="post-date"><?php the_time('F j, Y'); ?></time>
-				<?php the_content('Läs mer &raquo;'); ?>
+				<header>
+					<h2 class="post-title"><?php the_title(); ?></h2>
+					<time datetime="<?php the_time('Y-m-d'); ?>" class="post-date"><?php the_time('j F, Y'); ?></time>
+				</header>
+				<section>
+					<?php the_content(); ?>
+				</section>
 			</article>
 
 		<?php endwhile; ?>
 
-		<div class="navigation">
-			<div class="alignleft">
-				<?php next_posts_link('&laquo; Tidigare nyheter') ?>
+		<nav class="pagination" role="navigation">
+			<div class="previous-page">
+				<?php next_posts_link('&laquo; Previous') ?>
 			</div>
-			<div class="alignright">
-				<?php previous_posts_link('Senare nyheter &raquo;') ?>
+			<div class="next-page">
+				<?php previous_posts_link('Next &raquo;') ?>
 			</div>
-		</div>
+		</nav>
 
 	<?php endif; ?>
-	</section>
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

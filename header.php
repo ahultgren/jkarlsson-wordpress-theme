@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" dir="ltr" lang="<?php echo substr(get_bloginfo('language'),0,2); ?>"> <![endif]-->
-<!--[if IE 7]> <html class="no-js ie7 oldie" dir="ltr" lang="<?php echo substr(get_bloginfo('language'),0,2); ?>"> <![endif]-->
-<!--[if IE 8]> <html class="no-js ie8 oldie" dir="ltr" lang="<?php echo substr(get_bloginfo('language'),0,2); ?>"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" dir="ltr" lang="<?php echo substr(get_bloginfo('language'),0,2); ?>"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?php echo substr(get_bloginfo('language'), 0, 2); ?>"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="<?php echo substr(get_bloginfo('language'), 0, 2); ?>"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="<?php echo substr(get_bloginfo('language'), 0, 2); ?>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?php echo substr(get_bloginfo('language'), 0, 2); ?>"> <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
-	<link rel="stylesheet" media="all" href="<?php stylesheet_url(); ?>" />
-	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.ico" />
+	<title><?php wp_title(); ?></title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/normalize.css" />
+	<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/main.css" />
 
 	<?php wp_head(); ?>
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	
-	<script>window.jQuery || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
-
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 </head>
 <body <?php body_class(); ?>>
-	<section id="wrapper">
-		<header id="header">
-			<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
-			<<?php echo $heading_tag; ?> id="site-title">
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			</<?php echo $heading_tag; ?>>
+	<header class="site-header" role="banner">
+		<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 
-			<nav id="top-menu">
-				<?php wp_nav_menu( array('theme_location' => 'main-menu') ); ?>
-			</nav>
-		</header>
-		<section id="main">
+		<<?php echo $heading_tag; ?> class="site-title">
+			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+		</<?php echo $heading_tag; ?>>
+
+		<nav class="site-nav" role="navigation">
+			<?php wp_nav_menu( array('theme_location' => 'main-menu') ); ?>
+		</nav>
+
+	</header>
+		<main class="main" role="main">

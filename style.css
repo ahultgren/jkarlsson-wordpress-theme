@@ -1,5 +1,5 @@
 /*
-Theme Name: jkarlsson WordPress Theme
+Theme Name: jkarlsson
 Theme URI: http://jkarlsson.se/
 Description: jkarlsson WordPress Theme
 Author: Johan Karlsson
@@ -7,58 +7,23 @@ Version: 1.0
 License: GNU General Public License
 */
 
-/* Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
--------------------------------------------------------------- */
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-border: 0; font-family: inherit; font-size: 100%; font-style: inherit; font-weight: inherit;
-margin: 0; outline: 0; padding: 0; vertical-align: baseline; }
-:focus { outline: 0; }
-body { background: #fff; line-height: 1; }
-ol, ul { list-style: none; }
-table { border-collapse: separate; border-spacing: 0; }
-caption, th, td { font-weight: normal; text-align: left; }
-blockquote:before, blockquote:after, q:before, q:after { content: ""; }
-blockquote, q { quotes: "" ""; }
-a img { border: 0; }
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
-audio:not([controls]) { display: none; }
-[hidden] { display: none; }
-::-moz-selection { background: #a0bf52; color: #fff; text-shadow: none; }
-::selection { background: #a0bf52; color: #fff; text-shadow: none; }
-/* Assistive text */
-.assistive-text { position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px, 1px, 1px, 1px); }
-
-/* Clear & Floats */
-.clear, .clearboth { clear: both; }
-.clearright, .clear-right { clear: right; }
-.clearleft, .clear-left { clear: left; }
-.alignright, .align-right, .floatright, .float-right { float: right; }
-.alignleft, .align-left, .floatleft, .float-left { float: left; }
-.aligncenter .align-center { margin: 0 auto; text-align: center; }
-
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
-
-/* For image replacement */
-.ir, .sprite { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
-.ir br, .sprite br { display: none; }
-
-/* Hide from both screenreaders and browsers: h5bp.com/u */
-.hidden { display: none !important; visibility: hidden; }
-
-
-/* Elements
--------------------------------------------------------------- */
+/* Globals
+========================================================================== */
 
 html {	
 	font-size: 100%;
 	overflow-y: scroll;
+}
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: inherit;
+	line-height: 1.5;
+	font-weight: 300;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -80,14 +45,14 @@ p {
 
 a:link,
 a:visited {
-	color: #f89828;
+	color: #ddd;
 	text-decoration: none;
 }
 
 a:focus,
 a:active,
 a:hover {
-	color: #444;
+	color: #333;
 }
 
 ul, ol {
@@ -113,11 +78,11 @@ blockquote {
 	border-left: 5px solid #eee;
 }
 
-b,strong {
+b, strong {
 	font-weight: bold;	
 }
 
-i,em {
+i, em {
 	font-style: italic;	
 }
 
@@ -127,14 +92,23 @@ img {
 	margin-bottom: 1em;	
 }
 
-/* Fonts
--------------------------------------------------------------- */
+embed,
+iframe,
+object,
+video {
+	max-width: 100%;
+}
 
-body,
-input,
-textarea {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: inherit;
-	line-height: 1.5;
-	font-weight: 300;
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
