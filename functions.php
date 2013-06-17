@@ -56,3 +56,46 @@ function skl_enqueue_scripts(){
 		wp_enqueue_script('modernizr');
 	}
 }
+
+
+/* ----- Function that automagically creates a post type ----- */
+
+function post_type_factory ($slug, $singular, $plural = '') {
+	if($plural === '') {
+		$plural = $singular . 's';
+	}
+
+	$labels = array(
+		'name' => __($plural),
+		'singular_name' => __($singular),
+		'add_new' => __('Add New'),
+		'add_new_item' => __('Add New ' . $singular),
+		'edit_item' => __('Edit ' . $singular),
+		'new_item' => __('New ' . $singular),
+		'all_items' => __('All ' . $plural),
+		'view_item' => __('View ' . $singular),
+		'search_items' => __('Search ' . $plural),
+		'not_found' => 'No ' . $plural . ' found',
+		'not_found_in_trash' => __('No ' . $plural . ' found in Trash'), 
+		'parent_item_colon' => __(''),
+		'menu_name' => __($plural)
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true, 
+		'show_in_menu' => true, 
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'has_archive' => true,
+		'rewrite' => array('slug' => $slug),
+		'hierarchical' => false,
+		'menu_position' => 5,
+		'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields')
+	);
+
+	register_post_type($slug, $args);
+}
