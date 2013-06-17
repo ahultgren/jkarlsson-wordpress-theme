@@ -8,7 +8,7 @@
 	<title><?php wp_title(); ?></title>
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/normalize.css" />
-	<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/main.css" />
+	<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
 
 	<?php wp_head(); ?>
 
